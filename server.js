@@ -1,9 +1,10 @@
 const express = require('express');
+var request = require('request');
 const app = express();
 const bodyParser = require('body-parser');
 
-app.listen(process.env.PORT || 3001, () => {
-  console.log('Listening on port 3001');
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Listening on port 3000');
 });
 
 app.set('view engine', 'ejs');
@@ -17,7 +18,13 @@ app.get('/', (req, res) => {
 });
 
 // List all posts
-app.get('/posts', (req, res) => {});
+app.get('/posts', (req, res) => {
+  request('https://jsonplaceholder.typicode.com/posts', { json: true }, (err, res, body) => {
+    if (err) { return console.log(err); }
+    console.log(body);
+    //console.log(body.d);
+  });
+});
 
 // Show the search form
 app.get('/search', (req, res) => {

@@ -8,11 +8,11 @@
 <body>
   <h2>All Comments</h2>
   <p class='post'>
-    <span><%= post.name %></span>
+    <span><%= post.title %></span>
   </p>
 
   <form action='/delete' method='POST'>
-    <input type='hidden' name='name' value='<%=post.name%>'><br /><br />
+    <input type='hidden' name='title' value='<%=post.title%>'><br /><br />
     <button type='submit'>Delete</button>
   </form>
 
