@@ -1,5 +1,5 @@
 const express = require('express');
-var request = require('request');
+const request = require('request');
 const app = express();
 const bodyParser = require('body-parser');
 
@@ -19,10 +19,9 @@ app.get('/', (req, res) => {
 
 // List all posts
 app.get('/posts', (req, res) => {
-  request('https://jsonplaceholder.typicode.com/posts', { json: true }, (err, res, body) => {
+  request('https://jsonplaceholder.typicode.com/posts', { json: true }, (err, result, body) => {
     if (err) { return console.log(err); }
-    console.log(body);
-    //console.log(body.d);
+  res.render('posts.ejs', { post: body });
   });
 });
 
