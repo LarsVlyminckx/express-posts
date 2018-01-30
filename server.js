@@ -27,6 +27,16 @@ app.get('/posts', (req, res) => {
 
 // Show the search form
 app.get('/search', (req, res) => {
+  var query = { name: req.body.name }
+  request('https://jsonplaceholder.typicode.com/posts/', { json: true }, (err, result, body) => {
+    for (var i = 0; i < body.length; i++) {
+      if (body[i].title = query) {
+        //console.log('gevonden');
+      }
+    }
+    if (err) { return console.log(err); }
+  //res.render('posts.ejs', { post: body });
+  });
    res.render('search.ejs', { post: '' });
 });
 

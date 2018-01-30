@@ -7,14 +7,14 @@
 </head>
 <body>
   <h2>All Comments</h2>
-  <p class='post'>
-    <span><%= post.title %></span>
-  </p>
-
-  <form action='/delete' method='POST'>
-    <input type='hidden' name='title' value='<%=post.title%>'><br /><br />
-    <button type='submit'>Delete</button>
-  </form>
+  <ul class='comments'>
+  <% for(var i=0; i < comments.length; i++) {%>
+    <li class='comments'>
+      <span><%= comments[i].title %></span><br>
+      <label><%= comments[i].body %></label>
+    </li>
+  <% } %>
+  </ul>
 
 </body>
 </html>
