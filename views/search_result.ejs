@@ -7,6 +7,14 @@
 </head>
 <body>
   <h2>All Comments</h2>
+  <p class='post'>
+    <span><%= post.name %></span>
+  </p>
+
+  <form action='/delete' method='POST'>
+    <input type='hidden' name='name' value='<%=post.name%>'><br /><br />
+    <button type='submit'>Delete</button>
+  </form>
 
 </body>
 </html>

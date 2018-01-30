@@ -8,5 +8,14 @@
 <body>
   <h1>All posts</h1>
 
+  <ul class='post'>
+  <% for(var i=0; i < post.length; i++) {%>
+    <li class='product'>
+      <span><%= post[i].title %></span>
+    </li>
+  <% } %>
+  </ul>
+<br />
+
 </body>
 </html>
