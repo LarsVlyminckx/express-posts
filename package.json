@@ -13,10 +13,10 @@
     "body-parser": "^1.14.2",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
-    "request": "^2.83.0"
+    "request": "^2.88.0"
   },
   "devDependencies": {
-    "nodemon": "^1.8.1",
+    "nodemon": "^1.18.10",
     "tsc-watch": "^1.0.10"
   }
 }
